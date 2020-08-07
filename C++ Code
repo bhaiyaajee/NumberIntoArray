@@ -1,0 +1,48 @@
+/*                        Bhaiyaajee's Code  for converting any Number into an Array          */
+
+
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+  int num, last_digit, count=0;	
+
+
+   cout<<"Enter any number : ";
+   cin>>num;
+   
+   int duplicate = num;
+   
+   //Calculaying the number of digits in NUmber
+    while (duplicate != 0)
+    {
+      duplicate = duplicate / 10;
+      count++;
+    }
+    
+    //Declaring necesarry array and variables
+    int  arr[count] ,  i = count-1 ;
+    
+   
+   //Converting the Number into Array  
+  while (num != 0)
+    {
+      last_digit = num % 10;
+
+      arr[i] = last_digit;	// arr[4]=5  ,  arr[3]=4 , arr [2]=3 ... arr[0]= 1
+
+      num = num / 10;
+      i--;
+    }
+    
+cout<<"The Number in array form is ";
+for(int k =0 ; k<count ; k++)
+{
+    cout<<arr[k]<<" , ";
+}
+
+
+
+  return 0;
+}
